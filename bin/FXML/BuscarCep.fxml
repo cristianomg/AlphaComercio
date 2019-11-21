@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<SplitPane dividerPositions="0.2993311036789298" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BuscarCepController">
+  <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button fx:id="btnBuscarCep" layoutY="-4.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="175.0" style="-fx-background-color: #EBFE00;" text="Buscar CEP" textFill="#1206bc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnBuscarLogradouro" layoutY="97.0" mnemonicParsing="false" onAction="#btnBuscarLogradouro_Action" prefHeight="97.0" prefWidth="175.0" style="-fx-background-color: #2708EC;" text="Buscar Logradouros" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtualizar" layoutY="199.0" mnemonicParsing="false" onAction="#btnAtualizar_Action" prefHeight="97.0" prefWidth="175.0" style="-fx-background-color: #EBFE00;" text="Atualizar dados" textFill="#1206bc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnFinalizar" layoutY="300.0" mnemonicParsing="false" onAction="#btnFinalizar_Action" prefHeight="97.0" prefWidth="175.0" style="-fx-background-color: #2708EC;" text="Finalizar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="381.0">
+         <children>
+            <Button fx:id="btnBuscar" layoutX="293.0" layoutY="77.0" mnemonicParsing="false" onAction="#btnBuscar_Action" style="-fx-background-color: #2708EC;" text="Buscar" textFill="WHITE" />
+            <TextField fx:id="txfBuscarCep" layoutX="134.0" layoutY="78.0" />
+            <Pane layoutX="-2.0" layoutY="-6.0" prefHeight="63.0" prefWidth="425.0">
+               <children>
+                  <Label layoutX="25.0" layoutY="23.0" prefHeight="17.0" prefWidth="181.0" text="Buscar CEP" textFill="#3c0cab">
+                     <font>
+                        <Font name="Georgia" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="45.0" fitWidth="194.0" layoutX="215.0" layoutY="9.0">
+                     <image>
+                        <Image url="@../../../../../Downloads/logo-correios-256%20(1)%20(1).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Label layoutX="97.0" layoutY="82.0" text="CEP: " textFill="#3c0cab" />
+            <GridPane layoutX="3.0" layoutY="176.0" prefHeight="86.0" prefWidth="411.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="137.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="0.0" prefWidth="4.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="143.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="3.0" prefWidth="4.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="124.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="txfLogradouro" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfBairro" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfCidadeUF" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Pane prefHeight="41.0" prefWidth="89.0" style="-fx-background-color: #79A1F1;">
+                     <children>
+                        <Label layoutX="8.0" layoutY="13.0" prefHeight="17.0" prefWidth="122.0" text="Logradouro / Nome: " textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="41.0" prefWidth="89.0" style="-fx-background-color: #79A1F1;" GridPane.columnIndex="2">
+                     <children>
+                        <Label layoutX="27.0" layoutY="14.0" prefHeight="17.0" prefWidth="122.0" text="Bairro / Distrito:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="41.0" prefWidth="89.0" style="-fx-background-color: #79A1F1;" GridPane.columnIndex="4">
+                     <children>
+                        <Label layoutX="18.0" layoutY="13.0" prefHeight="17.0" prefWidth="122.0" text="Localidade / UF:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <Line endX="400.0" layoutX="209.0" layoutY="64.0" startX="-209.0" stroke="#6229f2" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

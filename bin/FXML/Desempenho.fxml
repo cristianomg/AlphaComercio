@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory ?>
+
+<SplitPane dividerPositions="0.2993311036789298" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DesempenhoController">
+  <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button layoutY="-4.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="175.0" style="-fx-background-color: #EBFE00;" text="Buscar CEP" textFill="#1206bc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutY="97.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="175.0" style="-fx-background-color: #2708EC;" text="Buscar Logradouros" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutY="199.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="175.0" style="-fx-background-color: #EBFE00;" text="Atualizar dados" textFill="#1206bc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutY="300.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="175.0" style="-fx-background-color: #2708EC;" text="Finalizar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="381.0">
+         <children>
+            <Pane layoutX="-2.0" layoutY="-6.0" prefHeight="63.0" prefWidth="425.0">
+               <children>
+                  <Label layoutX="25.0" layoutY="23.0" prefHeight="17.0" prefWidth="181.0" text="Desempenho" textFill="#3c0cab">
+                     <font>
+                        <Font name="Georgia" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="45.0" fitWidth="194.0" layoutX="215.0" layoutY="9.0">
+                     <image>
+                        <Image url="@../../../../../Downloads/logo-correios-256%20(1)%20(1).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Line endX="400.0" layoutX="209.0" layoutY="64.0" startX="-209.0" stroke="#6229f2" />
+            <Pane layoutX="-1.0" layoutY="64.0" prefHeight="336.0" prefWidth="416.0">
+               <children>
+                  <LineChart fx:id="graficoBuscas" animated="false" layoutX="1.0" layoutY="-2.0" legendVisible="true" mouseTransparent="true" prefHeight="177.0" prefWidth="416.0" title="Tempo das Buscas">
+                    <xAxis>
+                      <CategoryAxis fx:id="axisX" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="axisY" side="LEFT" />
+                    </yAxis>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                  </LineChart>
+                  <TableView fx:id="tabelaLog" layoutX="6.0" layoutY="181.0" prefHeight="148.0" prefWidth="407.0">
+                    <columns>
+                      <TableColumn prefWidth="247.0" text="Execução">
+                      <cellValueFactory>
+                		<PropertyValueFactory property="tipoOperacao" />
+                	</cellValueFactory>
+                      </TableColumn>
+                      <TableColumn prefWidth="89.0" text="Tempo">
+                      <cellValueFactory>
+                		<PropertyValueFactory property="tempo" />
+                	</cellValueFactory>
+                      </TableColumn>
+                        <TableColumn prefWidth="79.0" text="Unidade">
+                        <cellValueFactory>
+                		<PropertyValueFactory property="unidade" />
+                	</cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                  </TableView>
+                  <Label layoutX="143.0" layoutY="153.0" prefHeight="27.0" prefWidth="194.0" text="Log das execuções">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
